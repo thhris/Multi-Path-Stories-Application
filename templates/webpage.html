@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Multi Path Story Web App</title>
+    <link rel="icon" href="#">
+</head>
+
+<body>
+    <a href="/index">Back to start.</a>
+        <table border="1">
+            <col width="200">
+            <tr>
+                <td></td>
+                <td>
+                    {% if top_page_id %}
+                    <a href="/{{ top_page_id }}">{{ top_sent }}</a>
+                    {% else%}
+                    <form action="/new_page" method="POST">
+                        <input type ="hidden" name="current_page_id" value="{{ current_page_id }}">
+                        <input type="hidden" name="position" value="top_sent">
+                        <textarea name="new_sent"></textarea>
+                        <div><input type="submit"></div>
+                    </form>
+                    {% endif %}
+                </td>
+                <td></td>
+            </tr>
+
+            <col width="200">
+            <tr>
+                <td>
+                    {% if left_page_id %}
+                        <a href="/{{ left_page_id }}">{{ left_sent }}</a>
+                    {% else%}
+                    <form action="/new_page" method="POST">
+                        <input type ="hidden" name="current_page_id" value="{{ current_page_id }}">
+                        <input type="hidden" name="position" value="left_sent">
+                        <textarea name="new_sent"></textarea>
+                        <div><input type="submit"></div>
+                    </form>
+                    {% endif %}
+                </td>
+                <td>{{ center_sent }}</td>
+                <td>
+                        {% if right_page_id %}
+                        <a href="/{{ right_page_id }}">{{ right_sent }}</a>
+                    {% else%}
+                    <form action="/new_page" method="POST">
+                        <input type ="hidden" name="current_page_id" value="{{ current_page_id }}">
+                        <input type="hidden" name="position" value="right_sent">
+                        <textarea name="new_sent"></textarea>
+                        <div><input type="submit"></div>
+                    </form>
+                    {% endif %}
+                </td>
+             </tr>
+
+            <col width="200">
+            <tr>
+                <td></td>
+                 <td>
+                         {% if bottom_page_id %}
+                        <a href="/{{ bottom_page_id }}">{{ bottom_sent }}</a>
+                    {% else%}
+                    <form action="/new_page" method="POST">
+                        <input type ="hidden" name="current_page_id" value="{{ current_page_id }}">
+                        <input type="hidden" name="position" value="bottom_sent">
+                        <textarea name="new_sent"></textarea>
+                        <div><input type="submit"></div>
+                    </form>
+                    {% endif %}
+                 </td>
+                 <td></td>
+             </tr>
+         </table>
+</body>
+</html>
