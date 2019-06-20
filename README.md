@@ -21,7 +21,7 @@ My decision was based on the simplicity and flexability of Flask as it was able 
  * A Python file that starts the web server at port 4000 and handles all information on the client's browser.
  * HTML file that displays the web page buttons, table and hiperlinks for each story.
 
-###### The HTML file (webapp.html)
+###### The HTML file (webpage.html)
 
 The HTML file contains the usual header, name and displays two main components in the body: a link that returns the user back to the index page and a 3x3 grid where each cell that should contain relevant information has a page id, position, a text area and a submit button. Once the cell has a page id associated with it, the cell only contains a hiperlink based on its page id. The only cell that is excluded from this rule is the middle cell which only displays the sentence for the particular page's id.
 
